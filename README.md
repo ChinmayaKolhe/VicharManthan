@@ -1,4 +1,4 @@
-<img width="1366" height="720" alt="Screenshot 2025-12-12 111934" src="https://github.com/user-attachments/assets/44e887c3-985e-42aa-b62d-30858095ee2a" /><img width="1366" height="720" alt="Screenshot 2025-12-12 111934" src="https://github.com/user-attachments/assets/9d65d37a-1543-4d2c-b546-a9958b03e9ce" /># VicharManthan - Startup Idea Sharing & Collaboration Platform
+# VicharManthan - Startup Idea Sharing & Collaboration Platform
 
 ## 🚀 Overview
 
