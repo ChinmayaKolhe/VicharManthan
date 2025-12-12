@@ -1,4 +1,4 @@
-# VicharManthan - Startup Idea Sharing & Collaboration Platform
+<img width="1366" height="720" alt="Screenshot 2025-12-12 111934" src="https://github.com/user-attachments/assets/44e887c3-985e-42aa-b62d-30858095ee2a" /><img width="1366" height="720" alt="Screenshot 2025-12-12 111934" src="https://github.com/user-attachments/assets/9d65d37a-1543-4d2c-b546-a9958b03e9ce" /># VicharManthan - Startup Idea Sharing & Collaboration Platform
 
 ## 🚀 Overview
 
@@ -105,6 +105,45 @@ VicharManthan/
 3. **Submit Proposals** - Apply to join projects that match your skills
 4. **Track Applications** - Monitor status of your proposals
 5. **Connect** - Chat with founders once accepted
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](./screenshots/Home.png)
+
+### 📝 Signup Page
+![Signup Page](./screenshots/Signup.png)
+
+### 🔐 Login Page
+![Login Page](./screenshots/Login.png)
+
+### 🔍 Explore Ideas Page
+![Explore Ideas](./screenshots/ExploreIdeas.png)
+
+### 💡 My Ideas Page
+![My Ideas](./screenshots/MyIdeas.png)
+
+### 🚀 Create Idea Form
+![Create Idea](./screenshots/CreateIdea.png)
+
+### 📩 Submitting Proposals
+![Submitting Proposals](./screenshots/SubmittingProposals.png)
+
+### 📄 My Submitted Proposals
+![My Proposals](./screenshots/MyProposals.png)
+
+### 🗂️ Manage Proposals
+![Manage Proposals](./screenshots/ManageProposals.png)
+
+### 💬 Chat System
+![Chat System](./screenshots/Chat.png)
+
+### 🔔 Notifications
+![Notifications](./screenshots/Notifications.png)
+
+### 👤 Profile Page
+![Profile](./screenshots/Profile.png)
+
 
 ## 🔐 API Endpoints
 
