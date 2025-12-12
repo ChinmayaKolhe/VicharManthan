@@ -6,11 +6,15 @@ const Notification = require('../models/Notification');
 // @access  Public
 const getIdeas = async (req, res) => {
   try {
-    const { category, search, sort } = req.query;
+    const { category, search, sort, userId } = req.query;
     let query = {};
 
     if (category && category !== 'All') {
       query.category = category;
+    }
+
+    if (userId) {
+      query.author = userId;
     }
 
     if (search) {

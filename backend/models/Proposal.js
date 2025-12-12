@@ -25,6 +25,14 @@ const proposalSchema = new mongoose.Schema({
     type: String,
     trim: true
   }],
+  resume: {
+    type: String,  // base64 encoded PDF
+    default: null
+  },
+  resumeFileName: {
+    type: String,
+    default: null
+  },
   status: {
     type: String,
     enum: ['Pending', 'Accepted', 'Rejected'],

@@ -26,6 +26,21 @@ const updateProfile = async (req, res) => {
     const user = await User.findById(req.user._id);
 
     if (user) {
+      // Validate avatar if provided
+      if (req.body.avatar && req.body.avatar !== user.avatar) {
+        // Check if it's a base64 string
+        if (req.body.avatar.startsWith('data:image/')) {
+          // Estimate size (base64 is ~33% larger than original)
+          const base64Length = req.body.avatar.length;
+          const sizeInBytes = (base64Length * 3) / 4;
+          const sizeInMB = sizeInBytes / (1024 * 1024);
+          
+          if (sizeInMB > 3) {
+            return res.status(400).json({ message: 'Avatar image size should be less than 2MB' });
+          }
+        }
+      }
+
       user.name = req.body.name || user.name;
       user.bio = req.body.bio || user.bio;
       user.skills = req.body.skills || user.skills;
@@ -33,7 +48,7 @@ const updateProfile = async (req, res) => {
       user.website = req.body.website || user.website;
       user.github = req.body.github || user.github;
       user.linkedin = req.body.linkedin || user.linkedin;
-      user.avatar = req.body.avatar || user.avatar;
+      if (req.body.avatar) user.avatar = req.body.avatar;
 
       const updatedUser = await user.save();
       res.json({

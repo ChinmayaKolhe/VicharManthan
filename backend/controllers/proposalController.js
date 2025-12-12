@@ -7,7 +7,7 @@ const Notification = require('../models/Notification');
 // @access  Private
 const createProposal = async (req, res) => {
   try {
-    const { ideaId, message, proposedRole, skills } = req.body;
+    const { ideaId, message, proposedRole, skills, resume, resumeFileName } = req.body;
 
     const idea = await Idea.findById(ideaId);
     if (!idea) {
@@ -24,13 +24,38 @@ const createProposal = async (req, res) => {
       return res.status(400).json({ message: 'You have already submitted a proposal for this idea' });
     }
 
-    const proposal = await Proposal.create({
+    // Validate resume if provided
+    if (resume) {
+      // Check if it's a base64 PDF
+      if (!resume.startsWith('data:application/pdf;base64,')) {
+        return res.status(400).json({ message: 'Resume must be a PDF file' });
+      }
+
+      // Check size (limit to ~7MB base64, which is ~5MB original)
+      const base64Length = resume.length;
+      const sizeInBytes = (base64Length * 3) / 4;
+      const sizeInMB = sizeInBytes / (1024 * 1024);
+      
+      if (sizeInMB > 7) {
+        return res.status(400).json({ message: 'Resume file size should be less than 5MB' });
+      }
+    }
+
+    const proposalData = {
       idea: ideaId,
       applicant: req.user._id,
       message,
       proposedRole,
       skills
-    });
+    };
+
+    // Add resume if provided
+    if (resume && resumeFileName) {
+      proposalData.resume = resume;
+      proposalData.resumeFileName = resumeFileName;
+    }
+
+    const proposal = await Proposal.create(proposalData);
 
     // Create notification for idea author
     await Notification.create({
