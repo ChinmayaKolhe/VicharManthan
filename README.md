@@ -1,6 +1,6 @@
 # VicharManthan - Startup Idea Sharing & Collaboration Platform
 
-## 🚀 Overview
+## 🚀 Overview of an application
 
 VicharManthan is a comprehensive social media platform designed for startup idea sharing and collaboration. Founders can publish their ideas along with required skills and team size. Other users can upvote, like, comment, or submit proposals to join teams and contribute to exciting projects.
 
